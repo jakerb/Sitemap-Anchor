@@ -9,7 +9,8 @@ Automatic XML site map for Anchor CMS.
 
 Firstly, open up ` Anchor > routes > site.php` and paste the following before the **View Pages** section
  
-<pre>/** * Sitemap */ Route::get('sitemap.xml', function() { $sitemap = ''; $sitemap .= ' ';
+<pre> 
+/** * Sitemap */ Route::get('sitemap.xml', function() { $sitemap = ''; $sitemap .= ' ';
 // Main page
 $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>';
 $sitemap .= '<loc>' . Uri::full(Registry::get('posts_page')->slug . '/') . '</loc>';
@@ -27,6 +28,7 @@ foreach($query->get() as $article) {
 }
 $sitemap .= '</urlset>';
 return Response::create($sitemap, 200, array('content-type' => 'application/xml'));
-});</pre>
+});
+</pre>
 
 That's it!
