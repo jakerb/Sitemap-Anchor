@@ -10,7 +10,7 @@ Firstly, open up ` Anchor > routes > site.php` and paste the following before th
  
 <pre>/** * Sitemap */ Route::get('sitemap.xml', function() { $sitemap = ''; $sitemap .= ' ';
 // Main page
-$sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>';
+$sitemap .= "&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;&lt;url&gt;";
 $sitemap .= '<loc>' . Uri::full(Registry::get('posts_page')->slug . '/') . '</loc>';
 $sitemap .= '<priority>0.9</priority>';
 $sitemap .= '<changefreq>weekly</changefreq>';
